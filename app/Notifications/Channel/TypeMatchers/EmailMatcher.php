@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Notifications\Channel\Strategy\TypeMatch;
+namespace App\Notifications\Channel\TypeMatchers;
 
-use App\Notifications\Channel\Contracts\Type\ChannelTypeMatchInterface;
+use App\Notifications\Channel\Contracts\Type\ChannelTypeMatcherInterface;
 use App\Notifications\Enum\NotificationChannelType;
 
-class EmailMatch implements ChannelTypeMatchInterface
+class EmailMatcher implements ChannelTypeMatcherInterface
 {
     public function matches(string $value): bool {
         return filter_var($value, FILTER_VALIDATE_EMAIL);

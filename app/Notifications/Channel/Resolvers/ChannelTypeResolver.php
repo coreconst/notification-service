@@ -2,14 +2,14 @@
 
 namespace App\Notifications\Channel\Resolvers;
 
-use App\Notifications\Channel\Contracts\Type\ChannelTypeMatchInterface;
+use App\Notifications\Channel\Contracts\Type\ChannelTypeMatcherInterface;
 use App\Notifications\Channel\Contracts\Type\ChannelTypeResolverInterface;
 use App\Notifications\Enum\NotificationChannelType;
 
 class ChannelTypeResolver implements ChannelTypeResolverInterface
 {
     public function __construct(
-        /** @var array<ChannelTypeMatchInterface> */
+        /** @var array<ChannelTypeMatcherInterface> */
         private array $matchers
     ){}
 

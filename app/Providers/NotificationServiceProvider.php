@@ -4,8 +4,8 @@ namespace App\Providers;
 
 use App\Notifications\Channel\Contracts\Type\ChannelTypeResolverInterface;
 use App\Notifications\Channel\Resolvers\ChannelTypeResolver;
-use App\Notifications\Channel\Strategy\TypeMatch\EmailMatch;
-use App\Notifications\Channel\Strategy\TypeMatch\PhoneMatch;
+use App\Notifications\Channel\TypeMatchers\EmailMatcher;
+use App\Notifications\Channel\TypeMatchers\PhoneMatcher;
 use App\Notifications\Contracts\NotificationGatewayInterface;
 use App\Notifications\NotificationGateway;
 use Illuminate\Support\ServiceProvider;
@@ -19,8 +19,8 @@ class NotificationServiceProvider extends ServiceProvider
     {
         $this->app->singleton(ChannelTypeResolverInterface::class, function ($app){
             return new ChannelTypeResolver([
-                new EmailMatch(),
-                new PhoneMatch(),
+                new EmailMatcher(),
+                new PhoneMatcher(),
             ]);
         });
 
