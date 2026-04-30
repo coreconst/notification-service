@@ -3,4 +3,5 @@
 return [
     App\Providers\AppServiceProvider::class,
     App\Providers\NotificationServiceProvider::class,
+    App\Providers\Notification\ChannelServiceProvider::class,
 ];

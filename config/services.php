@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'betterme' => [
+        'url' => env('BETTER_ME', 'https://test_betterme.requestcatcher.com/')
+    ]
+
 ];
