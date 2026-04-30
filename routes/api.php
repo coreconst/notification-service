@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NotificationController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/test', fn() => response()->json(['status' => 'ok']));
+Route::post('/notification', [NotificationController::class, 'send']);
