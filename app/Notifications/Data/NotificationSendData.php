@@ -10,7 +10,7 @@ readonly class NotificationSendData
         public array $meta = []
     ){}
 
-    public static function formArray(array $data = []): static
+    public static function fromArray(array $data = []): static
     {
         if(!isset($data['to'], $data['message'])){
             throw new \InvalidArgumentException('Invalid data provided');

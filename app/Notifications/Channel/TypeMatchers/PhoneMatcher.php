@@ -13,6 +13,6 @@ class PhoneMatcher implements ChannelTypeMatcherInterface
 
     public function getType(): NotificationChannelType
     {
-        return NotificationChannelType::SMS;
+        return NotificationChannelType::PHONE;
     }
 }

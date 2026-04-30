@@ -15,7 +15,7 @@ class NotificationController extends Controller
 
     public function send(NotificationRequest $request): JsonResponse
     {
-        $data = NotificationSendData::formArray($request->validated());
+        $data = NotificationSendData::fromArray($request->validated());
 
         $res = $this->notificationGateway->send($data);
 

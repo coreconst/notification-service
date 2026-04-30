@@ -4,9 +4,9 @@ namespace App\Notifications\Enum;
 
 enum NotificationChannelType: string
 {
-    case SMS = 'sms';
+    case PHONE = 'phone';
 
     case EMAIL = 'email';
 
-    case UNKNOWN = '';
+    case UNKNOWN = 'unknown';
 }
