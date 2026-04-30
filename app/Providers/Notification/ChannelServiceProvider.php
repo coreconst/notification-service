@@ -4,7 +4,7 @@ namespace App\Providers\Notification;
 
 use App\Notifications\Channel\Contracts\SenderFactoryInterface;
 use App\Notifications\Channel\Contracts\Type\ChannelTypeResolverInterface;
-use App\Notifications\Channel\Factory\SenderFactory;
+use App\Notifications\Channel\Factories\SenderFactory;
 use App\Notifications\Channel\Resolvers\ChannelTypeResolver;
 use App\Notifications\Channel\Senders\EmailSender;
 use App\Notifications\Channel\Senders\PhoneSender;
