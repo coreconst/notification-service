@@ -2,13 +2,15 @@
 
 namespace App\Notifications\Data;
 
+use App\Notifications\Channel\Enum\ChannelResponseStatus;
 use App\Notifications\Enum\NotificationChannelType;
 
 readonly class NotificationResponseData
 {
     public function __construct(
         public NotificationChannelType $channel,
-        public string $message,
+        public ChannelResponseStatus $status,
+        public string $sentMessage,
         public array $meta = []
     ){}
 
@@ -16,7 +18,8 @@ readonly class NotificationResponseData
     {
         return [
             'channel' => $this->channel->value,
-            'message' => $this->message,
+            'status' => $this->status->value,
+            'message' => $this->sentMessage,
             'meta' => $this->meta
         ];
     }
