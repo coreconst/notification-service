@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Notifications\Channel\Factory;
+namespace App\Notifications\Channel\Factories;
 
 use App\Notifications\Channel\Contracts\SenderFactoryInterface;
 use App\Notifications\Channel\Contracts\SenderInterface;
