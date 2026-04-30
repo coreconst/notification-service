@@ -3,6 +3,7 @@
 namespace App\Notifications;
 
 use App\Notifications\Channel\Contracts\Type\ChannelTypeResolverInterface;
+use App\Notifications\Channel\Exceptions\NotificationChannelException;
 use App\Notifications\Contracts\NotificationGatewayInterface;
 use App\Notifications\Data\NotificationResponseData;
 use App\Notifications\Data\NotificationSendData;
@@ -14,11 +15,14 @@ class NotificationGateway implements NotificationGatewayInterface
         private ChannelTypeResolverInterface $channelTypeResolver,
     ){}
 
+    /**
+     * @throws NotificationChannelException
+     */
     public function send(NotificationSendData $data): NotificationResponseData
     {
         $channelType = $this->channelTypeResolver->resolve($data->to);
         if($channelType === NotificationChannelType::UNKNOWN){
-            throw new \InvalidArgumentException('Unknown channel type');
+            throw new NotificationChannelException('Unknown notification channel type');
         }
 
 
